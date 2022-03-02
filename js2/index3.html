@@ -20,9 +20,14 @@
 <script>
     const names = ["Amanda","Christian", "Peter", "Mark", "Lars"]
     function makelistItems (){
-        const listItems = names.map(name=>"<li>" +name + "</li>")
+        //const listItems = names.map(name=>"<li>" +name + "</li>")
+        const filter = names.filter(name=>name.length>4).map(name=>`<li>"${name} + </li>`.join("\n"))
+        
+        //filter returnerer en ny array
+        //const filterItems = filter.map(name=>`<li>"${name} + </li>`)
+        //const listItems = names.map(name=>`<li>"${name} + </li>`)
 
-const itemsAsString =listItems.join("\n")
+//const itemsAsString =listItems.join("\n")
 
 const myUL = document.getElementById("my-ul")
 myUL.innerHTML=itemsAsString
