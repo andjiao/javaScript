@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<ul id="my-ul">
+
+</ul>
+
+<form>
+    <input type="text" id="text">
+    <button id="add-btn"> add name </button>
+</form>
+
+<script>
+    const names = ["Amanda","Christian", "Peter", "Mark", "Lars"]
+    function makelistItems (){
+        const listItems = names.map(name=>"<li>" +name + "</li>")
+
+const itemsAsString =listItems.join("\n")
+
+const myUL = document.getElementById("my-ul")
+myUL.innerHTML=itemsAsString
+    }
+    
+makelistItems()
+
+function addName(evt){
+    evt.preventDefault()
+    const inputFielt = document.getElementById("text")
+    const newName = inputFielt.value
+    names.push(newName)
+    makelistItems()
+
+    console.log(newName)
+
+    //alert("tjek")
+}
+
+document.getElementById("add-btn").onclick =addName
+    console.log(itemsAsString)
+
+</script>
+</body>
+</html>
