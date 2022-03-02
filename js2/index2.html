@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <Style>
+        div{
+            width: 25px;
+            height: 25px;
+            border: 1px royalblue solid;
+            margin: 2px ;
+        }
+
+
+
+    </Style>
+    <div id ="d1"></div>
+    <div id="d2"></div>
+    <div id ="d3"></div>
+
+    <button id="btn-1">Change color</button>
+
+    <Script>
+
+function setColors (d)
+        {
+           const divs = document.querySelectorAll("div")
+           divs[0].style.backgroundColor ="red" 
+           divs[2].style.backgroundColor ="green" 
+           divs[3].style.backgroundColor ="yellow"  
+        }
+
+        const btn = document.getElementById("btn")
+        btn.onclick=setColors
+
+        /*function setColor (d)
+        {
+            d.style.backgroundColor ="green"  
+        }
+        divs.forEach(setColor)
+         divs.forEach(div => div.style.backgroundColor ="green")
+
+        
+        */
+
+        const divs = document.querySelectorAll("div") // vælger alle der matcher "div"
+        divs.forEach(function(d){
+            d.style.backgroundColor ="red"
+
+        })
+
+    </Script>
+</body>
+</html>
