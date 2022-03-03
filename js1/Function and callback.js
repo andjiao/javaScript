@@ -58,8 +58,7 @@ console.log(cb(3,"hh", add));
 function mul(n1,n2, callback) {
 
     return "Result from the two numbers: " + n1 + n2 +callback(n1,n2)
-
-    
+  
 }
 
 

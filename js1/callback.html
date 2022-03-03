@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="ul1"></ul>
+
+    <script>
+        /*
+1) Declare a JavaScript array and initialize it with some names (Lars, Jan, Peter, Bo, Frederik etc.). 
+Use the filter method to create a new array with only names of length <=3.
+Use the forEach method to iterate and print (console.log) both the original and the new array.
+ */
+
+const names =["Lars","Peter","Bo","Frederik","Niels"]
+
+var newArray = names.filter(name=>name.length>3)
+
+//item, er et parameter vi propper ind i funktionen
+names.forEach(item=> console.log(item))
+newArray.forEach(item=> console.log(item))
+
+/*
+2) Use the names-array created above, 
+and, using its map method, create a new array with all 
+names uppercased. 
+*/
+const uppercase= names.map(item=> item.toUpperCase(item))
+
+console.log(uppercase)
+
+function makeList(){
+    const lis = names.map(n=>`<li>${n}</li>`).join("");
+    document.getElementById("ul1").innerHTML=lis
+}
+
+makeList()
+
+    </script>
+</body>
+</html>

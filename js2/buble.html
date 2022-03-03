@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Style>
+        .mydiv {width: 25px; height: 25px;background-color:blueviolet; margin:1px;}
+    </Style>
+</body>
+
+<div id="outer">
+
+<div id="div1" class="mydiv"></div>
+<div id="div2" class="mydiv"></div>
+<div id="div3" class="mydiv"></div>
+<div id="div4" class="mydiv"></div>
+<div id="div5" class="mydiv"></div>
+<div id="div6" class="mydiv"></div>
+<div id="div7" class="mydiv"></div>
+<div id="div8" class="mydiv"></div>
+<div id="div9" class="mydiv"></div>
+<div id="div10" class="mydiv"></div>
+
+</div>
+
+
+<script>
+    document.getElementById("outer").onclick=(e)=>{
+        if(e.target.id==="outer")
+        return // ved at der ikke står at den skal returne noget, betyder dette at der ikke skal ske noget
+        
+        }
+        console.log(e.target.id) //target giver mig det element, der trykkes på (hvilket kan ses i consol)
+
+/*document.getElementById("div1").onclick=(e)=>alert(e.target.id)
+document.getElementById("div2").onclick=(e)=>alert(e.target.id)
+document.getElementById("div3").onclick=(e)=>alert(e.target.id)
+document.getElementById("div4").onclick=(e)=>alert(e.target.id)
+document.getElementById("div5").onclick=(e)=>alert(e.target.id)
+document.getElementById("div6").onclick=(e)=>alert(e.target.id)
+document.getElementById("div7").onclick=(e)=>alert(e.target.id)
+document.getElementById("div8").onclick=(e)=>alert(e.target.id)
+document.getElementById("div9").onclick=(e)=>alert(e.target.id)
+document.getElementById("div10").onclick=(e)=>alert(e.target.id)*/
+
+
+
+</script>
+</html>

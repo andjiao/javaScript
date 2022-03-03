@@ -5,38 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .mydiv {width: 25px; height: 25px;background-color:greenyellow; margin:5rem;}
+
+    </style>
 </head>
+
 <body>
-    <Style>
-        .mydiv {width: 25px; height: 25px;background-color:blueviolet; margin:1px;}
-    </Style>
-</body>
+   
 
-<div id="outer">
-
-<div id="div1" class="mydiv"></div>
-<div id="div2" class="mydiv"></div>
-<div id="div3" class="mydiv"></div>
-<div id="div4" class="mydiv"></div>
-<div id="div5" class="mydiv"></div>
-<div id="div6" class="mydiv"></div>
-<div id="div7" class="mydiv"></div>
-<div id="div8" class="mydiv"></div>
-<div id="div9" class="mydiv"></div>
-<div id="div10" class="mydiv"></div>
-
-</div>
+    <!--  
+        b)  Now, using cut and paste, add 10 more divs (still each with a unique id).
+    -->
 
 
-<script>
-    document.getElementById("outer").onclick=(e)=>{
-        if(e.target.id==="outer")
-        return // ved at der ikke står at den skal returne noget, betyder dette at der ikke skal ske noget
+
+<!--      
+    a) Add a click handler to each div and write code, so when clicked, 
+    each div will write to the console "Hi from idOfTheDiv".
+-->
+    <div id="outer">
+
+        <div id="div1" class="mydiv"></div>
+        <div id="div2" class="mydiv"></div>
+        <div id="div3" class="mydiv"></div>
+        <div id="div4" class="mydiv"></div>
+        <div id="div5" class="mydiv"></div>
+        <div id="div6" class="mydiv"></div>
+        <div id="div7" class="mydiv"></div>
+        <div id="div8" class="mydiv"></div>
+        <div id="div9" class="mydiv"></div>
+        <div id="div10" class="mydiv"></div>
+
+    </div>
+    
+    <!--   
+        c) Add an empty paragraph tag, with an id, to your HTML and change 
+        the code for both exercises above, so that output is not written to the console, 
+        but into this paragraph.
+ -->
+ <p id="p1"></p>
+
+
+    <script>
+
+        /* belonging to exercise c */
+
+
+/*Den hurtige måde at gøre det på:*/
+
+document.getElementById("outer").onclick=(e)=>{
+    /*i parantesen siger vi, at hvis vi klikker på ouer-div, altså det der er udenforn diverne, så skal der returneres ingenting*/
+        if(e.target.id==="outer"){
+            return // ved at der ikke står at den skal returne noget, betyder dette at der ikke skal ske noget
+
+        }
+        else{
+            /*Klikeks der derimod på et element, altså det modsatte at outer-div, så tages p-tags id, og der indsættes tekts i denne paragraf, som så......*/
+            document.getElementById("p1").innerText = e.target.id
+
+        }
+       
         
         }
-        console.log(e.target.id) //target giver mig det element, der trykkes på (hvilket kan ses i consol)
 
-/*document.getElementById("div1").onclick=(e)=>alert(e.target.id)
+        /*target giver mig det element, der er tilhørende det event som useren aktivere ved
+        at udføre en handling. Så hvis useren klikker på en firkant, 
+        aktiveres det event der er tilknyttet firkanten*/
+        console.log(e.target.id) 
+
+
+/*den besværlige måde at gøre det på:
+
+document.getElementById("div1").onclick=(e)=>alert(e.target.id)
 document.getElementById("div2").onclick=(e)=>alert(e.target.id)
 document.getElementById("div3").onclick=(e)=>alert(e.target.id)
 document.getElementById("div4").onclick=(e)=>alert(e.target.id)
@@ -47,7 +89,7 @@ document.getElementById("div8").onclick=(e)=>alert(e.target.id)
 document.getElementById("div9").onclick=(e)=>alert(e.target.id)
 document.getElementById("div10").onclick=(e)=>alert(e.target.id)*/
 
+    </script>
 
-
-</script>
+</body>
 </html>

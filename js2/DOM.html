@@ -7,29 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="div1" style ></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <!-- Add a button, and assign a click handler to the button. 
+    When the button is clicked each div should be given a unique colour.-->
+    <button id="btn-1">Change color</button>
+
+
     <Style>
         div{
             width: 25px;
             height: 25px;
-            border: 1px royalblue solid;
+            border: 1px rgb(241, 180, 201) solid;
             margin: 2px ;
         }
-
-
-
     </Style>
 
 
-    <div id ="d1"></div>
-    <div id="d2"></div>
-    <div id ="d3"></div>
-
-    <button id="btn-1">Change color</button>
-
-    <Script>
-
-function setColors (d)
+<script>
+    /*  a) When the page initially is loaded all divs should be given a colour of your choice
+Hints: use document.querySelectorAll("div") and element.style.backgroundColor */
+    function setColors (d)
         {
            const divs = document.querySelectorAll("div")
            divs[0].style.backgroundColor ="red" 
@@ -37,25 +37,25 @@ function setColors (d)
            divs[3].style.backgroundColor ="yellow"  
         }
 
-        const btn = document.getElementById("btn-1")
-        btn.onclick=setColors
-
-        /*function setColor (d)
+        /*Alternative måde at gøre det på:
+        function setColor (d)
         {
             d.style.backgroundColor ="green"  
         }
         divs.forEach(setColor)
          divs.forEach(div => div.style.backgroundColor ="green")
-
         
         */
+
+        /*Exercise (b */
+        const btn = document.getElementById("btn-1")
+        btn.onclick=setColors
 
         const divs = document.querySelectorAll("div") // vælger alle der matcher "div"
         divs.forEach(function(d){
             d.style.backgroundColor ="red"
-
         })
+</script>
 
-    </Script>
 </body>
 </html>
