@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <tr>
+        <!--Her opsættes de forskellige kategorier-->
+        <th>ID</th>
+          <th>Year</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Price</th>
+    </tr>
+
+    <!--Her opsættes hvad der skal stå i de forskellige værdier-->
+    <tr id="table">
+        <td id="id"></td>
+        <td id="year"></td>
+        <td id="brand"></td>
+        <td id="model"></td>
+        <td id="price"></td>
+    </tr>
+
+    <form>
+        <input id="getPrice" type="number">
+        <input id="submit" type="submit" placeholder=" Enter price">
+    </form>
+        
+
+</div>
+
+    <script>
+        let cars = [
+    { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+    { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+    { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+    { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+    { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+  ]
+
+  /*const submit = document.getElementById("submit").onclick = (event) => {
+    const getPrice = document.getElementById("getPrice")
+        event.preventDefault()
+        cars = cars.filter(car => car.price <= getPrice)*/
+
+        const Id = cars.map(name => `<tr>${name.id}</tr>`).join(`<br>`)
+        const Year = cars.map(name => `<tr>${name.year}</tr>`).join(`<br>`)
+        const Make = cars.map(name => `<tr>${name.make}</tr>`).join(`<br>`)
+        const Model = cars.map(name => `<tr>${name.model}</tr>`).join(`<br>`)
+        const Price = cars.map(name => `<tr>${name.price}</tr>`).join(`<br>`)
+
+
+        const table = document.querySelectorAll("td")
+        table[0].innerHTML = Id
+        table[1].innerHTML = Year
+        table[2].innerHTML = Make
+        table[3].innerHTML = Model
+        table[4].innerHTML = Price
+
+        /*her siges der, at den skal vælge alle elementer, der hedder td*/
+        const table = document.querySelectorAll("td")
+
+        table[0].innerHTML = Id
+        table[1].innerHTML = Year
+        table[2].innerHTML = Make
+        table[3].innerHTML = Model
+        table[4].innerHTML = Price
+
+    </script>
+</body>
+</html>

@@ -26,5 +26,5 @@ const cars = [
 
 
   function myFilter(array, callback){
-      const arry= []
+  
   }

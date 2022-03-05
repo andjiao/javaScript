@@ -8,35 +8,57 @@
 </head>
 <body>
     
-<ul id="my-ul">
-
-</ul>
+    <button id="loadData">Load Data</button>
+<ul id="my-ul"></ul>
 
 <form>
-    <input type="text" id="text">
-    <button id="add-btn"> add name </button>
-    <button input type="submit"> Submit</button>
+    <div>
+        <input type="text" id="text" placeholder="Enter new name here">
+    </div>
+
+    <div>
+        <span style="display: inline-block; width: 20em;margin-top: 10px;">Manipulate the individual DOM elements></span>
+        <button id="addName"> add name </button>
+        <button input type="removeF"> remove firs</button>
+        <button input type="removeL"> remove last</button>
+   
+    </div>
+
+    <div style="margin-top: 1em;"><span style="display: inline-block; width: 20em;">Manipulate the Array and re-render the UL</span>
+        <button id="addName">Add Name</button>
+        <button id="removeF">Remove First</button>
+        <button id="removeL">Remove Last</button>
+    </div>
+
 </form>
 
 <script>
     const names = ["Amanda","Christian", "Peter", "Mark", "Lars"]
     function makelistItems (){
+        const lis = names.map(n => `<li>${n}</li>`).join("")
+        document.getElementById("my-ul").innerHTML=lis
+
         //const listItems = names.map(name=>"<li>" +name + "</li>")
-        const filter = names.filter(name=>name.length>4).map(name=>`<li>"${name} + </li>`.join("\n"))
+        //const filter = names.filter(name=>name.length>4).map(name=>`<li>"${name} + </li>`.join("\n"))
         
         //filter returnerer en ny array
         //const filterItems = filter.map(name=>`<li>"${name} + </li>`)
         //const listItems = names.map(name=>`<li>"${name} + </li>`)
 
-//const itemsAsString =listItems.join("\n")
+const itemsAsString =listItems.join("\n")
 
 const myUL = document.getElementById("my-ul")
 myUL.innerHTML=itemsAsString
     }
     
-makelistItems()
+document.getElementById("loadData").onclick=()=>makelistItems()
 
-function addName(evt){
+
+document.getElementById("addName").onclick=(evt)=>{
+    evt.preventDefault
+    const name=document.getElementById("name-input").value
+}
+/*function addName(evt){
     evt.preventDefault()
     const inputFielt = document.getElementById("text")
     const newName = inputFielt.value
@@ -46,9 +68,9 @@ function addName(evt){
     console.log(newName)
 
     //alert("tjek")
-}
+}*/
 
-document.getElementById("add-btn").onclick =addName
+document.getElementById("addName").onclick =addName
     console.log(itemsAsString)
 
 </script>
