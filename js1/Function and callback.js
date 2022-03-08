@@ -9,7 +9,6 @@ function add(n1,n2){
 
 
 //Function expression
-
 /* muligt at gøre, at en variabel kan instasieres som en funktion, hvor der indsættes parameter, dog udefineret typer af variabler*/
 const sub =function (n1,n2){
 
@@ -54,7 +53,6 @@ i js er det String der stærkest */
 console.log(cb(3,"hh", add));
 
 /* Write a mul(n1, n2) function (inspired by add and sub) and use it as the callback for the cb function */
-
 function mul(n1,n2, callback) {
 
     return "Result from the two numbers: " + n1 + n2 +callback(n1,n2)

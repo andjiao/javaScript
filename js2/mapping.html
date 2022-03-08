@@ -27,8 +27,11 @@
     </tr>
 
     <form>
-        <input id="getPrice" type="number">
-        <input id="submit" type="submit" placeholder=" Enter price">
+        <!--Tekstfeltet-->
+        <input id="priceInput" type="number">
+
+        <!--Knappen-->
+        <button id="subtmitBtn" type="submit" placeholder="Enter price"></button>
     </form>
         
 
@@ -43,10 +46,14 @@
     { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
   ]
 
-  /*const submit = document.getElementById("submit").onclick = (event) => {
-    const getPrice = document.getElementById("getPrice")
-        event.preventDefault()
-        cars = cars.filter(car => car.price <= getPrice)*/
+  const submitBtn= document.getElementById("subtmitBtn").onclick=(event)=>{
+      const getPrice=document.getElementById("priceInput") //.value
+      /*Dette sikrer at der ikke laves et request til serveren, hvor der laves en ny liste.
+      I stedet bliver vi i browseren og arbejde med den liste som browseren allerede har indlæst 
+      og redigere i denne*/
+      event.preventDefault()
+
+  }
 
         const Id = cars.map(name => `<tr>${name.id}</tr>`).join(`<br>`)
         const Year = cars.map(name => `<tr>${name.year}</tr>`).join(`<br>`)
